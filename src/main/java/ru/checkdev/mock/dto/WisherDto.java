@@ -1,0 +1,30 @@
+package ru.checkdev.mock.dto;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class WisherDto {
+
+    private int id;
+
+    @NotNull(message = "Title must be non null")
+    private int interviewId;
+
+    @NotNull(message = "Title must be non null")
+    private int userId;
+
+    @NotBlank(message = "Title must be not empty")
+    private String contactBy;
+    /**
+     * Поле определяет одобрен участник на собеседование или нет.
+     */
+    private boolean approve;
+}
